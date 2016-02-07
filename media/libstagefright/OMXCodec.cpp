@@ -269,6 +269,9 @@ uint32_t OMXCodec::getComponentQuirks(
     }
     if (info->hasQuirk("output-buffers-are-unreadable")) {
         quirks |= kOutputBuffersAreUnreadable;
+    }  
+    if (info->hasQuirk("requires-flush-before-shutdown")) {
+        quirks |= kRequiresFlushBeforeShutdown;
     }
 
     return quirks;
